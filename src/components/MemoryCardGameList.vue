@@ -1,6 +1,11 @@
 <template>
   <ul>
-    <MemoryCardGameListItem v-for="rapper in rappers" v-bind:key="rapper.id" v-bind:name="rapper.name" v-bind:img="rapper.img" /> 
+    <MemoryCardGameListItem 
+      v-for="rapper in items" 
+      :key="rapper.id" 
+      :name="rapper.name" 
+      :img="rapper.img" 
+    /> 
   </ul>
 </template>
 
@@ -13,20 +18,10 @@ export default {
   components: {
     MemoryCardGameListItem
   },
-  data () {
-    return {
-      rappers: [
-        {
-          id: 0,
-          name: 'Nas',
-          img: ''
-        },
-        {
-          id: 1,
-          name: 'Jay-Z',
-          img: ''
-        },
-      ]
+  props: {
+    items: {
+      type: Array,
+      required: true
     }
   }
 }
