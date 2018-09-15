@@ -1,7 +1,7 @@
 <template>
   <li>
-    <span>{{ name }}</span>
-    <img :src="img" alt="">
+    {{name}}
+    <!-- <img :src="require(`@/assets/rappers/${img}`)" :alt="name"> -->
   </li>
 </template>
 
