@@ -16,6 +16,7 @@ export default {
   },
   data () {
     return {
+      newGame: false,
       wins: 0,
       losses: 0,
       timer: 0,
