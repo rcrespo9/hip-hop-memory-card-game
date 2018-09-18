@@ -29,6 +29,8 @@ export default {
 
 <style scoped>
   .c-memory-card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
     margin: 0;
     padding: 0;
