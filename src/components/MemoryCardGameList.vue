@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="card-list">
     <MemoryCardGameListItem 
       v-for="rapper in items" 
       :key="rapper.id" 
