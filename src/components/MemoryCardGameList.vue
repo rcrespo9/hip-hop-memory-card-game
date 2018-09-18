@@ -1,10 +1,10 @@
 <template>
   <ul class="c-memory-card-list">
     <MemoryCardGameListItem 
-      v-for="rapper in items" 
-      :key="rapper.id" 
-      :name="rapper.name" 
-      :img="rapper.img" 
+      v-for="item in items" 
+      :key="item.id" 
+      :name="item.name" 
+      :img="item.img" 
     /> 
   </ul>
 </template>

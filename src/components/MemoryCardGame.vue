@@ -10,7 +10,7 @@
             :found="matchedPairs" 
           />
         </header>
-        <MemoryCardGameList :items="Rappers" />
+        <MemoryCardGameList :items="gameCards" />
       </article>
     </main>
   </div>
@@ -20,6 +20,7 @@
 import MemoryCardGameScoreboard from './MemoryCardGameScoreboard.vue'
 import MemoryCardGameList from './MemoryCardGameList.vue'
 import Rappers from '../assets/data/rappers';
+import _ from 'lodash';
 
 export default {
   name: 'MemoryCardGame',
@@ -29,12 +30,19 @@ export default {
   },
   data () {
     return {
+      Rappers,
       newGame: false,
       attempts: 0,
       matchedPairs: 0,
       timer: "0:00",
-      Rappers
+      boardSize: 6,
+      gameCards: [],
+      selectedCards: []
     }
+  },
+  mounted() {
+    let randomSelectionsArr = _.sampleSize(this.Rappers, this.boardSize);
+    this.gameCards = randomSelectionsArr;
   }
 }
 </script>
