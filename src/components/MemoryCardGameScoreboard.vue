@@ -9,7 +9,6 @@
   </dl>
 </template>
 
-
 <script>
 export default {
   name: 'MemoryCardGameScoreboard',

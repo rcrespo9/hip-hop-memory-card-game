@@ -9,7 +9,6 @@
   </ul>
 </template>
 
-
 <script>
 import MemoryCardGameListItem from './MemoryCardGameListItem.vue';
 

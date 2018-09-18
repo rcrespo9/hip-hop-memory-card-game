@@ -8,7 +8,6 @@
   </li>
 </template>
 
-
 <script>
 export default {
   name: 'MemoryCardGameListItem',
