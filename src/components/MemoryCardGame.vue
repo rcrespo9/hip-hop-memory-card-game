@@ -1,9 +1,19 @@
 <template>
-  <main>
-    <article>
-      <MemoryCardGameList :items="Rappers" />
-    </article>
-  </main>
+  <div class="c-site-container">
+    <main>
+      <article>
+        <header>
+          <h1>Hip Hop Memory Card Game</h1>
+          <MemoryCardGameScoreboard 
+            :timer="timer"
+            :attempts="attempts"
+            :found="matchedPairs" 
+          />
+        </header>
+        <MemoryCardGameList :items="Rappers" />
+      </article>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -20,10 +30,9 @@ export default {
   data () {
     return {
       newGame: false,
-      wins: 0,
-      losses: 0,
-      timer: 0,
+      attempts: 0,
       matchedPairs: 0,
+      timer: "0:00",
       Rappers
     }
   }
