@@ -1,5 +1,5 @@
 <template>
-  <ul class="card-list">
+  <ul class="c-memory-card-list">
     <MemoryCardGameListItem 
       v-for="rapper in items" 
       :key="rapper.id" 
@@ -28,6 +28,5 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
 

@@ -1,5 +1,9 @@
 <template>
-  <MemoryCardGameList :items="Rappers" />
+  <main>
+    <article>
+      <MemoryCardGameList :items="Rappers" />
+    </article>
+  </main>
 </template>
 
 <script>
