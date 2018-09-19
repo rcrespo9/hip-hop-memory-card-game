@@ -1,11 +1,11 @@
 <template>
   <ul class="c-memory-card-list">
     <MemoryCardGameListItem 
-      v-for="item in items" 
-      :key="item.id" 
+      v-for="(item, index) in items" 
+      :key="index" 
       :name="item.name" 
       :img="item.img" 
-    /> 
+    />
   </ul>
 </template>
 
@@ -29,7 +29,7 @@ export default {
 <style scoped>
   .c-memory-card-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     list-style-type: none;
     margin: 0;
     padding: 0;

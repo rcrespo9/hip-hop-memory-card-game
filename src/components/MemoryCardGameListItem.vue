@@ -20,7 +20,13 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
+  data () {
+    return {
+      isSelected: false,
+      isMatch: false
+    }
+  } 
 }
 </script>
 

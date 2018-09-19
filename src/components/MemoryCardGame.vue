@@ -31,18 +31,22 @@ export default {
   data () {
     return {
       Rappers,
-      newGame: false,
+      isNewGame: false,
       attempts: 0,
       matchedPairs: 0,
       timer: "0:00",
-      boardSize: 6,
-      gameCards: [],
+      randomCardsAmt: 18,
       selectedCards: []
     }
   },
-  mounted() {
-    let randomSelectionsArr = _.sampleSize(this.Rappers, this.boardSize);
-    this.gameCards = randomSelectionsArr;
+  computed: {
+    gameCards() {
+      const randomCards = _.sampleSize(this.Rappers, this.randomCardsAmt);
+      const duplicatedCards = randomCards.reduce((acc, curr) => acc.concat([curr, curr]), []);
+      const shuffledCards = _.shuffle(duplicatedCards);
+      
+      return shuffledCards;
+    }
   }
 }
 </script>
