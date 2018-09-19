@@ -1,5 +1,5 @@
 <template>
-  <li class="memory-card">
+  <li class="memory-card" @click="selectedCard">
     <span class="memory-card__front"></span>
     <span class="memory-card__back">
       {{name}}
@@ -11,6 +11,12 @@
 <script>
 export default {
   name: 'MemoryCardGameListItem',
+  data() {
+    return {
+      isSelected: false,
+      isMatch: false
+    }
+  },
   props: {
     name: { 
       type: String,
@@ -19,6 +25,11 @@ export default {
     img: { 
       type: String,
       required: true
+    }
+  },
+  methods: {
+    selectedCard () {
+      this.isSelected = true;
     }
   }
 }

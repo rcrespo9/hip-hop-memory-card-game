@@ -13,7 +13,7 @@
         v-for="(rapper, index) in gameCards" 
         :key="index" 
         :name="rapper.name" 
-        :img="rapper.img" 
+        :img="rapper.img"
       />
     </memory-card-game-list>
   </article>
@@ -41,9 +41,7 @@ export default {
       matchedPairs: 0,
       timer: "0:00",
       randomCardsAmt: 18,
-      selectedCards: [],
-      isSelected: false,
-      isMatch: false
+      selectedCards: []
     }
   },
   computed: {
