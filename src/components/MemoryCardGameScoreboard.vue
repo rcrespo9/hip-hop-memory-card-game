@@ -1,11 +1,11 @@
 <template>
-  <dl class="c-scoreboard">
-    <dt class="c-scoreboard__attr">Timer</dt>
-    <dd class="c-scoreboard__val">{{timer}}</dd>
-    <dt class="c-scoreboard__attr">Attempts</dt>
-    <dd class="c-scoreboard__val">{{attempts}}</dd>
-    <dt class="c-scoreboard__attr">Found</dt>
-    <dd class="c-scoreboard__val">{{found}}</dd>
+  <dl class="scoreboard">
+    <dt class="scoreboard__attr">Timer</dt>
+    <dd class="scoreboard__val">{{timer}}</dd>
+    <dt class="scoreboard__attr">Attempts</dt>
+    <dd class="scoreboard__val">{{attempts}}</dd>
+    <dt class="scoreboard__attr">Found</dt>
+    <dd class="scoreboard__val">{{found}}</dd>
   </dl>
 </template>
 

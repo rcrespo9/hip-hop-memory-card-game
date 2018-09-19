@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <MemoryCardGame />
+    <div class="site-container">
+      <main>
+        <MemoryCardGame />
+      </main>
+    </div>
   </div>
 </template>
 
@@ -16,6 +20,8 @@ export default {
 </script>
 
 <style>
+@import "~normalize.css";
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

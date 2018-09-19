@@ -1,32 +1,37 @@
 <template>
-  <div class="c-site-container">
-    <main>
-      <article>
-        <header>
-          <h1>Hip Hop Memory Card Game</h1>
-          <MemoryCardGameScoreboard 
-            :timer="timer"
-            :attempts="attempts"
-            :found="matchedPairs" 
-          />
-        </header>
-        <MemoryCardGameList :items="gameCards" />
-      </article>
-    </main>
-  </div>
+  <article>
+    <header>
+      <h1>Hip Hop Memory Card Game</h1>
+      <MemoryCardGameScoreboard 
+        :timer="timer"
+        :attempts="attempts"
+        :found="matchedPairs" 
+      />
+    </header>
+    <memory-card-game-list>
+      <MemoryCardGameListItem 
+        v-for="(rapper, index) in gameCards" 
+        :key="index" 
+        :name="rapper.name" 
+        :img="rapper.img" 
+      />
+    </memory-card-game-list>
+  </article>
 </template>
 
 <script>
 import MemoryCardGameScoreboard from './MemoryCardGameScoreboard.vue'
 import MemoryCardGameList from './MemoryCardGameList.vue'
-import Rappers from '../assets/data/rappers';
-import _ from 'lodash';
+import MemoryCardGameListItem from './MemoryCardGameListItem.vue'
+import Rappers from '../assets/data/rappers'
+import _ from 'lodash'
 
 export default {
   name: 'MemoryCardGame',
   components: {
     MemoryCardGameScoreboard,
-    MemoryCardGameList
+    MemoryCardGameList,
+    MemoryCardGameListItem
   },
   data () {
     return {
@@ -36,7 +41,9 @@ export default {
       matchedPairs: 0,
       timer: "0:00",
       randomCardsAmt: 18,
-      selectedCards: []
+      selectedCards: [],
+      isSelected: false,
+      isMatch: false
     }
   },
   computed: {
@@ -52,7 +59,7 @@ export default {
 </script>
 
 <style>
-  @import "~normalize.css";
+  
 </style>
 
 

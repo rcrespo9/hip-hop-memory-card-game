@@ -1,11 +1,6 @@
 <template>
-  <ul class="c-memory-card-list">
-    <MemoryCardGameListItem 
-      v-for="(item, index) in items" 
-      :key="index" 
-      :name="item.name" 
-      :img="item.img" 
-    />
+  <ul class="memory-cards-list">
+    <slot></slot>
   </ul>
 </template>
 
@@ -13,21 +8,12 @@
 import MemoryCardGameListItem from './MemoryCardGameListItem.vue';
 
 export default {
-  name: 'MemoryCardGameList',
-  components: {
-    MemoryCardGameListItem
-  },
-  props: {
-    items: {
-      type: Array,
-      required: true
-    }
-  }
+  name: 'MemoryCardGameList'
 }
 </script>
 
 <style scoped>
-  .c-memory-card-list {
+  .memory-cards-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     list-style-type: none;

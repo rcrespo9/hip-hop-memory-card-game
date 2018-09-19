@@ -1,7 +1,7 @@
 <template>
-  <li class="c-memory-card">
-    <span class="c-memory-card__front"></span>
-    <span class="c-memory-card__back">
+  <li class="memory-card">
+    <span class="memory-card__front"></span>
+    <span class="memory-card__back">
       {{name}}
       <!-- <img :src="require(`@/assets/rappers-imgs/${img}`)" :alt="name"> -->
     </span>
@@ -20,17 +20,13 @@ export default {
       type: String,
       required: true
     }
-  },
-  data () {
-    return {
-      isSelected: false,
-      isMatch: false
-    }
-  } 
+  }
 }
 </script>
 
 <style scoped>
-
+  .memory-card:hover {
+    cursor: pointer;
+  }
 </style>
 
