@@ -30,6 +30,7 @@ export default {
   methods: {
     selectedCard () {
       this.isSelected = true;
+      this.$emit('add-card');
     }
   }
 }

@@ -14,6 +14,7 @@
         :key="index" 
         :name="rapper.name" 
         :img="rapper.img"
+        v-on:add-card="addSelectedCard(rapper.id)"
       />
     </memory-card-game-list>
   </article>
@@ -51,6 +52,11 @@ export default {
       const shuffledCards = _.shuffle(duplicatedCards);
       
       return shuffledCards;
+    }
+  },
+  methods: {
+    addSelectedCard (objId) {
+      this.selectedCards.push(objId);
     }
   }
 }
