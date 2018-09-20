@@ -5,7 +5,7 @@
       <MemoryCardGameScoreboard 
         :timer="timer"
         :attempts="attempts"
-        :found="matchedPairs" 
+        :matched-pairs-count="matchedPairsCount" 
       />
     </header>
     <memory-card-game-list>
@@ -14,7 +14,9 @@
         :key="index" 
         :name="rapper.name" 
         :img="rapper.img"
-        v-on:add-card="addSelectedCard(rapper)"
+        :is-selected="isCardSelected(index)"
+        :is-match="isCardMatch(rapper.id)"
+        v-on:add-card="addSelectedCard(rapper.id, index)"
       />
     </memory-card-game-list>
   </article>
@@ -37,16 +39,17 @@ export default {
   data () {
     return {
       Rappers,
-      isNewGame: false,
-      attempts: 0,
-      matchedPairs: 0,
-      timer: "0:00",
       randomCardsAmt: 18,
+      isNewGame: false,
+      timer: "0:00",
+      attempts: 0,
+      matchedPairsCount: 0,
+      matchedPairs: [],
       selectedCards: []
     }
   },
   computed: {
-    gameCards() {
+    gameCards () {
       const randomCards = _.sampleSize(this.Rappers, this.randomCardsAmt);
       const duplicatedCards = randomCards.reduce((acc, curr) => acc.concat([curr, curr]), []);
       const shuffledCards = _.shuffle(duplicatedCards);
@@ -55,10 +58,18 @@ export default {
     }
   },
   methods: {
-    addSelectedCard (obj) {
+    addSelectedCard (cardId, cardIdx) {
       if (this.selectedCards.length < 2) {
-        this.selectedCards.push(obj);
+        const selectedCardObj = { cardId, cardIdx };
+        console.log(selectedCardObj);
+        this.selectedCards.push(selectedCardObj);
       }
+    },
+    isCardSelected (cardIdx) {
+      return this.selectedCards.some(e => e.cardIdx === cardIdx);
+    },
+    isCardMatch (cardId) {
+      return this.matchedPairs.includes(cardId);
     }
   },
   watch: {
@@ -66,11 +77,17 @@ export default {
       const isTwoCards = this.selectedCards.length === 2;
 
       if (isTwoCards) {
-        const areCardsEqual = _.isEqual(this.selectedCards[0], this.selectedCards[1]);
+        const firstCardId = this.selectedCards[0].cardId;
+        const secondCardId = this.selectedCards[1].cardId;
+        const areCardsEqual = firstCardId === secondCardId;
+        
         this.attempts++;
         
-        if(areCardsEqual) {
-          this.matchedPairs++;
+        if (areCardsEqual) {
+          const matchedPairsId = firstCardId;
+
+          this.matchedPairs.push(matchedPairsId);
+          this.matchedPairsCount++;
         }
 
         this.selectedCards = [];

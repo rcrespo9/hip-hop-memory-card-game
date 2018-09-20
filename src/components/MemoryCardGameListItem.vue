@@ -1,5 +1,5 @@
 <template>
-  <li class="memory-card" @click="selectedCard">
+  <li class="memory-card" :class="{ match: isMatch, selected: isSelected }" @click="selectedCard">
     <span class="memory-card__front"></span>
     <span class="memory-card__back">
       {{name}}
@@ -11,11 +11,6 @@
 <script>
 export default {
   name: 'MemoryCardGameListItem',
-  data() {
-    return {
-      isSelected: false
-    }
-  },
   props: {
     name: { 
       type: String,
@@ -25,6 +20,10 @@ export default {
       type: String,
       required: true
     },
+    isSelected: {
+      type: Boolean,
+      default: false
+    },
     isMatch: {
       type: Boolean,
       default: false
@@ -32,7 +31,6 @@ export default {
   },
   methods: {
     selectedCard () {
-      this.isSelected = true;
       this.$emit('add-card');
     }
   }
@@ -42,6 +40,14 @@ export default {
 <style scoped>
   .memory-card:hover {
     cursor: pointer;
+  }
+
+  .match {
+    color: green !important;
+  }
+
+  .selected {
+    color: blue;
   }
 </style>
 
