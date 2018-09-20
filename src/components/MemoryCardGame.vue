@@ -61,7 +61,7 @@ export default {
     addSelectedCard (cardId, cardIdx) {
       if (this.selectedCards.length < 2) {
         const selectedCardObj = { cardId, cardIdx };
-        console.log(selectedCardObj);
+
         this.selectedCards.push(selectedCardObj);
       }
     },
