@@ -57,7 +57,13 @@ export default {
   methods: {
     addSelectedCard (obj) {
       this.selectedCards.push(obj);
-      console.log(this.selectedCards);
+    }
+  },
+  watch: {
+    selectedCards () {
+      if (this.selectedCards.length === 2) {
+        console.log('Two cards have been selected!');
+      }
     }
   }
 }
