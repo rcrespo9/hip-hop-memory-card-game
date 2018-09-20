@@ -81,8 +81,6 @@ export default {
         const secondCardId = this.selectedCards[1].cardId;
         const areCardsEqual = firstCardId === secondCardId;
         
-        this.attempts++;
-        
         if (areCardsEqual) {
           const matchedPairsId = firstCardId;
 
@@ -90,6 +88,7 @@ export default {
           this.matchedPairsCount++;
         }
 
+        this.attempts++;
         this.selectedCards = [];
       }
     }
