@@ -14,7 +14,7 @@
         :key="index" 
         :name="rapper.name" 
         :img="rapper.img"
-        v-on:add-card="addSelectedCard(rapper.id)"
+        v-on:add-card="addSelectedCard(rapper)"
       />
     </memory-card-game-list>
   </article>
@@ -55,8 +55,9 @@ export default {
     }
   },
   methods: {
-    addSelectedCard (objId) {
-      this.selectedCards.push(objId);
+    addSelectedCard (obj) {
+      this.selectedCards.push(obj);
+      console.log(this.selectedCards);
     }
   }
 }

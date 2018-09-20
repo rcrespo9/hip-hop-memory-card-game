@@ -13,8 +13,7 @@ export default {
   name: 'MemoryCardGameListItem',
   data() {
     return {
-      isSelected: false,
-      isMatch: false
+      isSelected: false
     }
   },
   props: {
@@ -25,6 +24,10 @@ export default {
     img: { 
       type: String,
       required: true
+    },
+    isMatch: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
