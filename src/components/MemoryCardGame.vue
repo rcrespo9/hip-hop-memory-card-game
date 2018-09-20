@@ -56,13 +56,24 @@ export default {
   },
   methods: {
     addSelectedCard (obj) {
-      this.selectedCards.push(obj);
+      if (this.selectedCards.length < 2) {
+        this.selectedCards.push(obj);
+      }
     }
   },
   watch: {
     selectedCards () {
-      if (this.selectedCards.length === 2) {
-        console.log('Two cards have been selected!');
+      const isTwoCards = this.selectedCards.length === 2;
+
+      if (isTwoCards) {
+        const areCardsEqual = _.isEqual(this.selectedCards[0], this.selectedCards[1]);
+        this.attempts++;
+        
+        if(areCardsEqual) {
+          this.matchedPairs++;
+        }
+
+        this.selectedCards = [];
       }
     }
   }
