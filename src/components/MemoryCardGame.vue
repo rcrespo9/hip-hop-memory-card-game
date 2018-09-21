@@ -3,7 +3,7 @@
     <header>
       <h1>Hip Hop Memory Card Game</h1>
       <MemoryCardGameScoreboard 
-        :timer="timer"
+        :timer="gameTimer"
         :attempts="attempts"
         :matched-pairs-count="matchedPairsCount" 
       />
@@ -29,6 +29,7 @@ import MemoryCardGameVictoryScreen from './MemoryCardGameVictoryScreen';
 import MemoryCardGameList from './MemoryCardGameList.vue'
 import MemoryCardGameListItem from './MemoryCardGameListItem.vue'
 import Rappers from '../assets/data/rappers'
+import Timer from 'easytimer.js';
 import _ from 'lodash'
 
 export default {
@@ -44,7 +45,7 @@ export default {
       Rappers,
       pairsAmount: 18,
       isNewGame: false,
-      timer: "0:00",
+      gameTimer: '00:00',
       attempts: 0,
       matchedPairsCount: 0,
       matchedPairs: [],
@@ -63,6 +64,9 @@ export default {
       return this.pairsAmount === this.matchedPairsCount;
     }
   },
+  mounted () {
+    this.startGameTimer();
+  },
   methods: {
     addSelectedCard (cardId, cardIdx) {
       if (this.selectedPair.length < 2) {
@@ -76,6 +80,13 @@ export default {
     },
     isCardMatch (cardId) {
       return this.matchedPairs.includes(cardId);
+    },
+    startGameTimer () {
+      const timer = new Timer();
+      timer.start();
+      timer.addEventListener('secondsUpdated', (e) => {
+        this.gameTimer = timer.getTimeValues().toString(['minutes', 'seconds']);
+      })
     }
   },
   watch: {
@@ -86,7 +97,7 @@ export default {
         const areCardsEqual = this.selectedPair.every( (val, i, arr) => val.cardId === arr[0].cardId );
         
         if (areCardsEqual) {
-          const matchedPairsId = _.head(this.selectedPair).cardId;
+          const matchedPairsId = this.selectedPair[0].cardId;
 
           this.matchedPairs.push(matchedPairsId);
           this.matchedPairsCount++;
