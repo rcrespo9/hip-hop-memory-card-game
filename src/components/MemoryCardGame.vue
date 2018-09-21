@@ -5,7 +5,7 @@
       <MemoryCardGameScoreboard 
         :timer="gameTimer"
         :attempts="attempts"
-        :matched-pairs-count="matchedPairsCount" 
+        :matched-pairs-count="matchedPairsCount"
       />
     </header>
     <memory-card-game-list>
@@ -19,7 +19,12 @@
         v-on:add-card="addSelectedCard(rapper.id, index)"
       />
     </memory-card-game-list>
-    <MemoryCardGameVictoryScreen :all-pairs-found="allPairsFound" :success-rate="successRate" :final-time="finalTime" />
+    <MemoryCardGameVictoryScreen 
+      :all-pairs-found="allPairsFound" 
+      :success-rate="successRate" 
+      :final-time="finalTime" 
+      :start-new-game="startNewGame" 
+    />
   </article>
 </template>
 
@@ -41,28 +46,9 @@ export default {
     MemoryCardGameListItem
   },
   data () {
-    return {
-      Rappers,
-      pairsAmount: 18,
-      isNewGame: false,
-      gameTimer: '00:00',
-      timer: new Timer(),
-      finalTime: '',
-      attempts: 0,
-      allPairsFound: false,
-      matchedPairsCount: 0,
-      matchedPairs: [],
-      selectedPair: []
-    }
+    return this.initialData();
   },
   computed: {
-    gameCards () {
-      const randomCards = _.sampleSize(this.Rappers, this.pairsAmount);
-      const duplicatedCards = randomCards.reduce((acc, curr) => acc.concat([curr, curr]), []);
-      const shuffledCards = _.shuffle(duplicatedCards);
-      
-      return shuffledCards;
-    },
     successRate () {
       let successRatePercentage;
 
@@ -73,10 +59,36 @@ export default {
       return successRatePercentage;
     }
   },
-  mounted () {
-    this.startGameTimer();
+  created () {
+    this.initGame();
   },
   methods: {
+    initialData () {
+      return {
+        Rappers,
+        gameCards: [],
+        pairsAmount: 18,
+        gameTimer: '00:00',
+        timer: new Timer(),
+        finalTime: '',
+        attempts: 0,
+        allPairsFound: false,
+        matchedPairsCount: 0,
+        matchedPairs: [],
+        selectedPair: []
+      }
+    },
+    initGame () {
+      this.addGameCards();
+      this.startGameTimer();
+    },
+    addGameCards () {
+      const randomCards = _.sampleSize(this.Rappers, this.pairsAmount);
+      const duplicatedCards = randomCards.reduce((acc, curr) => acc.concat([curr, curr]), []);
+      const shuffledCards = _.shuffle(duplicatedCards);
+      
+      this.gameCards = shuffledCards;
+    },
     addSelectedCard (cardId, cardIdx) {
       if (this.selectedPair.length < 2) {
         const selectedCardObj = { cardId, cardIdx };
@@ -100,12 +112,16 @@ export default {
       this.allPairsFound = true;
       this.timer.stop();
       this.finalTime = this.gameTimer;
+    },
+    startNewGame() {
+      Object.assign(this.$data, this.initialData());
+      this.initGame();
     }
   },
   watch: {
     selectedPair () {
       const isTwoCards = this.selectedPair.length === 2;
-
+      
       if (isTwoCards) {
         const areCardsEqual = this.selectedPair.every( (val, i, arr) => val.cardId === arr[0].cardId );
         
@@ -120,8 +136,8 @@ export default {
         this.selectedPair = [];
       }
     },
-    matchedPairsCount (newCount) {
-      if (newCount === this.pairsAmount) {
+    matchedPairsCount (count) {
+      if (count === this.pairsAmount) {
         this.wonGame();
       }
     }

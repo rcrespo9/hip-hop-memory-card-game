@@ -1,5 +1,8 @@
 <template>
-  <p :class="{ show: allPairsFound }">You did it! You won the game in {{finalTime}} with a {{successRate}} success rate!</p>
+  <div class="wrapper" :class="{ show: allPairsFound }">
+    <p>You did it! You won the game in {{finalTime}} with a {{successRate}} success rate!</p>
+    <button @click="startNewGame">Start New Game</button>
+  </div>
 </template>
 
 <script>
@@ -8,13 +11,14 @@ export default {
   props: {
     allPairsFound: Boolean,
     finalTime: String,
-    successRate: String
+    successRate: String,
+    startNewGame: Function
   }
 }
 </script>
 
-<style>
-  p {
+<style scoped>
+  .wrapper {
     display: none;
   }
 
