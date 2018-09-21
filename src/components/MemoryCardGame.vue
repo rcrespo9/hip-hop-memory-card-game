@@ -110,12 +110,32 @@ export default {
     },
     wonGame () {
       this.allPairsFound = true;
-      this.timer.stop();
       this.finalTime = this.gameTimer;
+      this.timer.stop();
+      this.saveStatsToLocalStorage();
     },
-    startNewGame() {
-      Object.assign(this.$data, this.initialData());
+    startNewGame () {
+      Object.assign( this.$data, this.initialData() );
       this.initGame();
+    },
+    saveStatsToLocalStorage () {
+      let stats = [];
+      const game = {
+        finalTime: this.finalTime,
+        successRate: this.successRate,
+        date: new Date()
+      };
+      const storeStats = () => {
+        stats.push(game);
+        localStorage.setItem( 'stats', JSON.stringify(stats) );        
+      }
+
+      if ( localStorage.getItem('stats') === null ) {
+        storeStats();
+      } else {
+        stats = JSON.parse( localStorage.getItem('stats') );
+        storeStats();
+      }
     }
   },
   watch: {
