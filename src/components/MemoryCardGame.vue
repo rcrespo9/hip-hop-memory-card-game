@@ -48,7 +48,7 @@ export default {
       attempts: 0,
       matchedPairsCount: 0,
       matchedPairs: [],
-      selectedCards: []
+      selectedPair: []
     }
   },
   computed: {
@@ -65,35 +65,35 @@ export default {
   },
   methods: {
     addSelectedCard (cardId, cardIdx) {
-      if (this.selectedCards.length < 2) {
+      if (this.selectedPair.length < 2) {
         const selectedCardObj = { cardId, cardIdx };
 
-        this.selectedCards.push(selectedCardObj);
+        this.selectedPair.push(selectedCardObj);
       }
     },
     isCardSelected (cardIdx) {
-      return this.selectedCards.some(e => e.cardIdx === cardIdx);
+      return this.selectedPair.some(e => e.cardIdx === cardIdx);
     },
     isCardMatch (cardId) {
       return this.matchedPairs.includes(cardId);
     }
   },
   watch: {
-    selectedCards () {
-      const isTwoCards = this.selectedCards.length === 2;
+    selectedPair () {
+      const isTwoCards = this.selectedPair.length === 2;
 
       if (isTwoCards) {
-        const areCardsEqual = this.selectedCards.every( (val, i, arr) => val.cardId === arr[0].cardId );
+        const areCardsEqual = this.selectedPair.every( (val, i, arr) => val.cardId === arr[0].cardId );
         
         if (areCardsEqual) {
-          const matchedPairsId = _.head(this.selectedCards).cardId;
+          const matchedPairsId = _.head(this.selectedPair).cardId;
 
           this.matchedPairs.push(matchedPairsId);
           this.matchedPairsCount++;
         }
 
         this.attempts++;
-        this.selectedCards = [];
+        this.selectedPair = [];
       }
     }
   }
