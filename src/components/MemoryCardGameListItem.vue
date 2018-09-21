@@ -31,7 +31,9 @@ export default {
   },
   methods: {
     selectedCard () {
-      this.$emit('add-card');
+      if(!this.isSelected) {
+        this.$emit('add-card');
+      }
     }
   }
 }
@@ -42,6 +44,7 @@ export default {
     cursor: pointer;
   }
 
+  /* temporary styles */
   .match {
     color: green !important;
   }
