@@ -19,7 +19,7 @@
         v-on:add-card="addSelectedCard(rapper.id, index)"
       />
     </memory-card-game-list>
-    <MemoryCardGameVictoryScreen :all-pairs-found="allPairsFound" />
+    <MemoryCardGameVictoryScreen :all-pairs-found="allPairsFound" :success-rate="successRate" :final-time="finalTime" />
   </article>
 </template>
 
@@ -46,7 +46,10 @@ export default {
       pairsAmount: 18,
       isNewGame: false,
       gameTimer: '00:00',
+      timer: new Timer(),
+      finalTime: '',
       attempts: 0,
+      allPairsFound: false,
       matchedPairsCount: 0,
       matchedPairs: [],
       selectedPair: []
@@ -60,8 +63,14 @@ export default {
       
       return shuffledCards;
     },
-    allPairsFound () {
-      return this.pairsAmount === this.matchedPairsCount;
+    successRate () {
+      let successRatePercentage;
+
+      if (this.attempts) {
+        successRatePercentage = `${(this.matchedPairsCount / this.attempts).toFixed(2) * 100}%`;
+      }
+
+      return successRatePercentage;
     }
   },
   mounted () {
@@ -82,11 +91,15 @@ export default {
       return this.matchedPairs.includes(cardId);
     },
     startGameTimer () {
-      const timer = new Timer();
-      timer.start();
-      timer.addEventListener('secondsUpdated', (e) => {
-        this.gameTimer = timer.getTimeValues().toString(['minutes', 'seconds']);
+      this.timer.start();
+      this.timer.addEventListener('secondsUpdated', (e) => {
+        this.gameTimer = this.timer.getTimeValues().toString(['minutes', 'seconds']);
       })
+    },
+    wonGame () {
+      this.allPairsFound = true;
+      this.timer.stop();
+      this.finalTime = this.gameTimer;
     }
   },
   watch: {
@@ -105,6 +118,11 @@ export default {
 
         this.attempts++;
         this.selectedPair = [];
+      }
+    },
+    matchedPairsCount (newCount) {
+      if (newCount === this.pairsAmount) {
+        this.wonGame();
       }
     }
   }

@@ -1,15 +1,14 @@
 <template>
-  <p :class="{ show: allPairsFound }">Won Game!</p>
+  <p :class="{ show: allPairsFound }">You did it! You won the game in {{finalTime}} with a {{successRate}} success rate!</p>
 </template>
 
 <script>
 export default {
   name: 'MemoryCardGameVictoryScreen',
   props: {
-    allPairsFound: {
-      type: Boolean,
-      default: false
-    }
+    allPairsFound: Boolean,
+    finalTime: String,
+    successRate: String
   }
 }
 </script>
