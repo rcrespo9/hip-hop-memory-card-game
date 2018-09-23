@@ -31,9 +31,7 @@ export default {
   },
   methods: {
     selectedCard () {
-      if(!this.isSelected) {
-        this.$emit('add-card');
-      }
+      this.$emit('add-card');
     }
   }
 }

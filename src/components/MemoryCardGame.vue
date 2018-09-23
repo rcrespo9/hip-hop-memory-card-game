@@ -90,7 +90,7 @@ export default {
       this.gameCards = shuffledCards;
     },
     addSelectedCard (cardId, cardIdx) {
-      if (this.selectedPair.length < 2) {
+      if (this.selectedPair.length < 2 && !this.isCardSelected(cardIdx) && !this.isCardMatch(cardId)) {
         const selectedCardObj = { cardId, cardIdx };
 
         this.selectedPair.push(selectedCardObj);
@@ -104,7 +104,7 @@ export default {
     },
     startGameTimer () {
       this.timer.start();
-      this.timer.addEventListener('secondsUpdated', (e) => {
+      this.timer.addEventListener('secondsUpdated', () => {
         this.gameTimer = this.timer.getTimeValues().toString(['minutes', 'seconds']);
       })
     },
