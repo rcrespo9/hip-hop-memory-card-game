@@ -5,8 +5,7 @@
         Front
       </div>
       <div class="memory-card__back">
-        {{name}}
-        <!-- <img class="memory-card__img" :src="require(`@/assets/rappers-imgs/${img}`)" :alt="name"> -->
+        <img class="memory-card__img" :src="require(`@/assets/rapper-imgs/${img}`)" :alt="name">
       </div>
     </div>
   </li>
@@ -43,19 +42,21 @@ export default {
 
 <style lang="scss" scoped>
   .memory-card {
-    border-radius: 4px;
+    width: 9.969em;
+    height: 9.969em;
+    margin: 0 auto;
     perspective: 800px;
 
     &:hover {
       cursor: pointer;
-    }
+    }    
   }
 
-  .memory-card,
+  .memory-card__flipper,
   .memory-card__front,
   .memory-card__back {
-    width: 9.969em;
-    height: 9.969em;
+    width: 100%;
+    height: 100%;
   }
 
   .memory-card__flipper {

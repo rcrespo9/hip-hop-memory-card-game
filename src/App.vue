@@ -19,9 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "~normalize.css";
-
+<style>
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
