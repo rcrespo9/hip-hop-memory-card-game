@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import MemoryCardGameListItem from './MemoryCardGameListItem.vue';
 
 export default {
   name: 'MemoryCardGameList'

@@ -155,7 +155,10 @@ export default {
         }
 
         this.attempts++;
-        this.selectedPair = [];
+        
+        setTimeout(() => {
+          this.selectedPair = [];
+        }, 1500);
       }
     },
     matchedPairsCount (count) {
@@ -167,7 +170,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   
 </style>
 

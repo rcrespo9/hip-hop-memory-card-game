@@ -22,8 +22,9 @@ export default {
 <style lang="scss">
 @import "~normalize.css";
 
-#app {
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 </style>
