@@ -108,23 +108,25 @@ export default {
         this.gameTimer = this.timer.getTimeValues().toString(['minutes', 'seconds']);
       })
     },
+    startNewGame () {
+      Object.assign( this.$data, this.initialData() );
+      this.initGame();
+    },
     wonGame () {
       this.allPairsFound = true;
       this.finalTime = this.gameTimer;
       this.timer.stop();
       this.saveStatsToLocalStorage();
     },
-    startNewGame () {
-      Object.assign( this.$data, this.initialData() );
-      this.initGame();
-    },
     saveStatsToLocalStorage () {
       let stats = [];
+      
       const game = {
         finalTime: this.finalTime,
         successRate: this.successRate,
         date: new Date()
       };
+
       const storeStats = () => {
         stats.push(game);
         localStorage.setItem( 'stats', JSON.stringify(stats) );        
