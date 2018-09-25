@@ -27,8 +27,9 @@ body {
 }
 
 .site-container {
-  max-width: ms(14);
+  max-width: ms(15);
   margin: 0 auto;
+  padding: 0 $global-gutter;
 }
 
 </style>

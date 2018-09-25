@@ -1,24 +1,26 @@
 <template>
   <article>
-    <header>
-      <h1>Hip Hop Memory Card Game</h1>
-      <MemoryCardGameScoreboard 
-        :timer="gameTimer"
-        :attempts="attempts"
-        :matched-pairs-count="matchedPairsCount"
-      />
-    </header>
-    <MemoryCardGameList>
-      <MemoryCardGameListItem 
-        v-for="(rapper, index) in gameCards" 
-        :key="index" 
-        :name="rapper.name" 
-        :img="rapper.img"
-        :is-selected="isCardSelected(index)"
-        :is-match="isCardMatch(rapper.id)"
-        v-on:add-card="addSelectedCard(rapper.id, index)"
-      />
-    </MemoryCardGameList>
+    <div class="memory-game-container"> 
+      <header>
+        <h1>Hip Hop Memory Card Game</h1>
+        <MemoryCardGameScoreboard 
+          :timer="gameTimer"
+          :attempts="attempts"
+          :matched-pairs-count="matchedPairsCount"
+        />  
+      </header> 
+      <MemoryCardGameList>
+        <MemoryCardGameListItem 
+          v-for="(rapper, index) in gameCards" 
+          :key="index" 
+          :name="rapper.name" 
+          :img="rapper.img"
+          :is-selected="isCardSelected(index)"
+          :is-match="isCardMatch(rapper.id)"
+          v-on:add-card="addSelectedCard(rapper.id, index)"
+        />
+      </MemoryCardGameList>
+    </div>
     <MemoryCardGameVictoryScreen 
       :all-pairs-found="allPairsFound" 
       :success-rate="successRate" 
@@ -106,7 +108,7 @@ export default {
       this.timer.start();
       this.timer.addEventListener('secondsUpdated', () => {
         this.gameTimer = this.timer.getTimeValues().toString(['minutes', 'seconds']);
-      })
+      });
     },
     startNewGame () {
       Object.assign( this.$data, this.initialData() );
@@ -171,8 +173,12 @@ export default {
 }
 </script>
 
-<style>
-  
+<style lang="scss">
+  .memory-game-container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-gap: $global-gutter;
+  }
 </style>
 
 
