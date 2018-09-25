@@ -20,6 +20,8 @@ export default {
 </script>
 
 <style>
+@import '~normalize.css';
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

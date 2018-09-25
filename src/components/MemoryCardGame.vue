@@ -152,13 +152,14 @@ export default {
 
           this.matchedPairs.push(matchedPairsId);
           this.matchedPairsCount++;
+          this.selectedPair = [];
+        } else {
+          setTimeout(() => {
+            this.selectedPair = [];
+          }, 1500);
         }
 
         this.attempts++;
-        
-        setTimeout(() => {
-          this.selectedPair = [];
-        }, 1500);
       }
     },
     matchedPairsCount (count) {
