@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~normalize.css';
 
 body {
   -webkit-font-smoothing: antialiased;
