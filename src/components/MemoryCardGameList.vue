@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .memory-cards-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);

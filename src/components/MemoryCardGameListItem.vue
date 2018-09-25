@@ -40,10 +40,10 @@ export default {
 
 <style lang="scss" scoped>
   .memory-card {
-    width: 9.969em;
-    height: 9.969em;
+    width: ms(5);
+    height: ms(5);
     margin: 0 auto;
-    perspective: 800px;
+    perspective: 900px;
 
     &:hover {
       cursor: pointer;

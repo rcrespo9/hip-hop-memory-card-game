@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "css-loader": "^1.0.0",
     "easytimer.js": "^2.2.3",
     "lodash": "^4.17.11",
+    "modularscale-sass": "^3.0.5",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
     "sass-loader": "^7.1.0",

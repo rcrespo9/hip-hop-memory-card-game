@@ -1,0 +1,10 @@
+/*------------------------------------*\
+  #MODULAR SCALE SETTINGS
+\*------------------------------------*/
+
+@import '~modularscale-sass';
+
+$modularscale: (
+  base: 1rem,
+  ratio: $golden
+);
