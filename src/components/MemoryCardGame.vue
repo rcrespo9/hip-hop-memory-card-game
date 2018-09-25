@@ -8,6 +8,7 @@
           :attempts="attempts"
           :matched-pairs-count="matchedPairsCount"
         />  
+        <router-link to="/statistics">Stats</router-link>
       </header> 
       <MemoryCardGameList>
         <MemoryCardGameListItem 

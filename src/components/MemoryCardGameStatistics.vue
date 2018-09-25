@@ -1,21 +1,24 @@
 <template>
-  <table>
-    <caption>Statistics</caption>
-    <thead>
-      <tr>
-        <th scope="col">Final Time</th>
-        <th scope="col">Success Rate</th>
-        <th scope="col">Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(statLine, index) in stats" :key="index">
-        <td>{{statLine.finalTime}}</td>
-        <td>{{statLine.successRate}}</td>
-        <td>{{statLine.date}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+    <router-link to="/">Back to Game</router-link>
+    <table>
+      <caption>Statistics</caption>
+      <thead>
+        <tr>
+          <th scope="col">Final Time</th>
+          <th scope="col">Success Rate</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(statLine, index) in stats" :key="index">
+          <td>{{statLine.finalTime}}</td>
+          <td>{{statLine.successRate}}</td>
+          <td>{{statLine.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
