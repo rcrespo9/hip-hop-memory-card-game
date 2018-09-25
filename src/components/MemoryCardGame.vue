@@ -8,7 +8,7 @@
         :matched-pairs-count="matchedPairsCount"
       />
     </header>
-    <memory-card-game-list>
+    <MemoryCardGameList>
       <MemoryCardGameListItem 
         v-for="(rapper, index) in gameCards" 
         :key="index" 
@@ -18,7 +18,7 @@
         :is-match="isCardMatch(rapper.id)"
         v-on:add-card="addSelectedCard(rapper.id, index)"
       />
-    </memory-card-game-list>
+    </MemoryCardGameList>
     <MemoryCardGameVictoryScreen 
       :all-pairs-found="allPairsFound" 
       :success-rate="successRate" 
