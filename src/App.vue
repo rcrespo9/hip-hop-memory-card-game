@@ -27,4 +27,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.site-container {
+  max-width: ms(14);
+  margin: 0 auto;
+}
+
 </style>

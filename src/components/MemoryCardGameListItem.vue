@@ -40,8 +40,8 @@ export default {
 
 <style lang="scss" scoped>
   .memory-card {
-    width: ms(5);
-    height: ms(5);
+    width: ms(8);
+    height: ms(8);
     margin: 0 auto;
     perspective: 900px;
 
