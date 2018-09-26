@@ -8,7 +8,7 @@
           :attempts="attempts"
           :matched-pairs-count="matchedPairsCount"
         />  
-        <router-link to="/statistics">Stats</router-link>
+        <router-link to="/statistics" v-show="areThereStats || allPairsFound">Stats</router-link>
         <button v-show="allPairsFound" @click="startNewGame">Start New Game</button>
       </header> 
       <MemoryCardGameList>
@@ -58,10 +58,16 @@ export default {
       let successRatePercentage;
 
       if (this.attempts) {
-        successRatePercentage = `${(this.matchedPairsCount / this.attempts).toFixed(2) * 100}%`;
+        const decVal = (this.matchedPairsCount / this.attempts) * 100;
+        const roundedVal = Math.round(decVal);
+        
+        successRatePercentage = `${roundedVal}%`;
       }
 
       return successRatePercentage;
+    },
+    areThereStats () {
+      return localStorage.getItem('stats') !== null;
     }
   },
   created () {
