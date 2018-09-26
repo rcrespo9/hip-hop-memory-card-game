@@ -31,9 +31,9 @@ export default {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image: url('//media.giphy.com/media/9D5gC0ryykq6hx8Xri/source.gif');
+    /* background-image: url('//media.giphy.com/media/9D5gC0ryykq6hx8Xri/source.gif');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
   }
 </style>
