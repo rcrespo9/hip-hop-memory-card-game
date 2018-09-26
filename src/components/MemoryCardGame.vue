@@ -9,6 +9,7 @@
           :matched-pairs-count="matchedPairsCount"
         />  
         <router-link to="/statistics">Stats</router-link>
+        <button v-show="allPairsFound" @click="startNewGame">Start New Game</button>
       </header> 
       <MemoryCardGameList>
         <MemoryCardGameListItem 
@@ -23,10 +24,11 @@
       </MemoryCardGameList>
     </div>
     <MemoryCardGameVictoryScreen 
-      :all-pairs-found="allPairsFound" 
+      v-show="showVictoryScreen" 
       :success-rate="successRate" 
       :final-time="finalTime" 
       :start-new-game="startNewGame" 
+      :close-screen="closeVictoryScreen"
     />
   </article>
 </template>
@@ -76,6 +78,7 @@ export default {
         finalTime: '',
         attempts: 0,
         allPairsFound: false,
+        showVictoryScreen: false,
         matchedPairsCount: 0,
         matchedPairs: [],
         selectedPair: []
@@ -117,6 +120,7 @@ export default {
     },
     wonGame () {
       this.allPairsFound = true;
+      this.showVictoryScreen = true;
       this.finalTime = this.gameTimer;
       this.timer.stop();
       this.saveStatsToLocalStorage();
@@ -141,6 +145,9 @@ export default {
         stats = JSON.parse( localStorage.getItem('stats') );
         storeStats();
       }
+    },
+    closeVictoryScreen () {
+      this.showVictoryScreen = false;
     }
   },
   watch: {
