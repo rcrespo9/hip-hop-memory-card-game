@@ -7,8 +7,7 @@
           :timer="gameTimer"
           :attempts="attempts"
           :matched-pairs-count="matchedPairsCount"
-        />  
-        <router-link to="/statistics" v-show="areThereStats || allPairsFound">Stats</router-link>
+        />
         <button v-show="allPairsFound" @click="startNewGame">Start New Game</button>
       </header> 
       <MemoryCardGameList>
