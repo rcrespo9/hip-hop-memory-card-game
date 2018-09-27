@@ -143,7 +143,7 @@ export default {
       const storeStats = () => {
         stats.push(game);
         localStorage.setItem( 'stats', JSON.stringify(stats) );        
-      }
+      };
 
       if ( localStorage.getItem('stats') === null ) {
         storeStats();
