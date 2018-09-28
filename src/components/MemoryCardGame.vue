@@ -77,7 +77,7 @@ export default {
       return {
         Rappers,
         gameCards: [],
-        pairsAmount: 10,
+        pairsAmount: 6,
         gameTimer: '00:00',
         timer: new Timer(),
         finalTime: '',
@@ -189,7 +189,7 @@ export default {
 <style lang="scss">
   .memory-game-container {
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 20% 80%;
     grid-gap: $global-gutter;
   }
 </style>
