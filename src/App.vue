@@ -15,7 +15,15 @@
 </template>
 
 <style lang="scss">
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
   body {
+    color: $white;
+    background-color: #111;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
