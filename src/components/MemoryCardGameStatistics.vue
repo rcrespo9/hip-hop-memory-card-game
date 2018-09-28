@@ -35,6 +35,7 @@ export default {
   },
   filters: {
     formatDate (val) {
+      if (!val) return '';
       return format(val, 'MM/DD/YYYY');
     }
   },
