@@ -12,7 +12,7 @@
         <tr v-for="(statLine, index) in orderedStats" :key="index">
           <td>{{statLine.finalTime}}</td>
           <td>{{statLine.successRate}}</td>
-          <td>{{statLine.date}}</td>
+          <td>{{statLine.date | formatDate}}</td>
         </tr>
       </tbody>
     </table>
@@ -24,12 +24,18 @@
 
 <script>
 import _ from 'lodash'
+import format from 'date-fns/format'
 
 export default {
   name: 'MemoryCardGameStatistics',
   data () {
     return {
       stats: ''
+    }
+  },
+  filters: {
+    formatDate (val) {
+      return format(val, 'MM/DD/YYYY');
     }
   },
   created () {
