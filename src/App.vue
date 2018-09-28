@@ -22,7 +22,7 @@
   }
 
   body {
-    background-color: #eeeeee;
+    background-color: #102027;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

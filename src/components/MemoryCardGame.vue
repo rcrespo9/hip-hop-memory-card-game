@@ -8,7 +8,7 @@
           :attempts="attempts"
           :matched-pairs-count="matchedPairsCount"
         />
-        <button v-show="allPairsFound" @click="startNewGame">Start New Game</button>
+        <button @click="startNewGame">Reset</button>
       </header> 
       <MemoryCardGameList>
         <MemoryCardGameListItem 
@@ -171,7 +171,7 @@ export default {
         } else {
           setTimeout(() => {
             this.selectedPair = [];
-          }, 1500);
+          }, 700);
         }
 
         this.attempts++;
