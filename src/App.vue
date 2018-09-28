@@ -22,8 +22,7 @@
   }
 
   body {
-    color: $white;
-    background-color: #111;
+    background-color: #eeeeee;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
