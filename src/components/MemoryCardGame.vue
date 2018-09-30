@@ -2,7 +2,7 @@
   <article>
     <div class="memory-game-container"> 
       <header>
-        <h1>Hip Hop Memory Card Game</h1>
+        <!-- <h1>Hip Hop Memory Card Game</h1> -->
         <MemoryCardGameScoreboard 
           :timer="gameTimer"
           :attempts="attempts"
@@ -189,7 +189,7 @@ export default {
 <style lang="scss">
   .memory-game-container {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
     grid-gap: $global-gutter;
   }
 </style>

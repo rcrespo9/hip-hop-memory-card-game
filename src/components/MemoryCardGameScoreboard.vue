@@ -1,11 +1,19 @@
 <template>
   <dl class="scoreboard">
-    <dt class="scoreboard__attr">Timer</dt>
-    <dd class="scoreboard__val">{{timer}}</dd>
-    <dt class="scoreboard__attr">Tries</dt>
-    <dd class="scoreboard__val">{{attempts}}</dd>
-    <dt class="scoreboard__attr">Matches</dt>
-    <dd class="scoreboard__val">{{matchedPairsCount}}</dd>
+    <div>
+      <dt class="scoreboard__attr">Timer</dt>
+      <dd class="scoreboard__val">{{timer}}</dd>
+    </div>
+
+    <div>
+      <dt class="scoreboard__attr">Tries</dt>
+      <dd class="scoreboard__val">{{attempts}}</dd>
+    </div>
+
+    <div>
+      <dt class="scoreboard__attr">Matches</dt>
+      <dd class="scoreboard__val">{{matchedPairsCount}}</dd>
+    </div>
   </dl>
 </template>
 
@@ -28,3 +36,6 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+</style>
