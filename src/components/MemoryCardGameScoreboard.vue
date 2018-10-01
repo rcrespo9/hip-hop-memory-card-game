@@ -53,12 +53,13 @@ export default {
     }
 
       .attr__key {
+        margin-bottom: ms(-7);
         font-size: ms(1);
-        font-weight: 500;
+        font-weight: 600;
       }
 
       .attr__val {
         margin: 0;
-        font-size: ms(0);
+        font-size: ms(1);
       }
 </style>

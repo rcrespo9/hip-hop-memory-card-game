@@ -28,7 +28,8 @@
   body {
     color: $black;
     background-color: $lt-gray;
-    font-family: 'futura-pt', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -37,5 +38,9 @@
     max-width: ms(15);
     margin: 0 auto;
     padding: 0 $global-gutter;
+  }
+
+  main {
+    padding-top: ms(2);
   }
 </style>
