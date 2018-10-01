@@ -4,7 +4,11 @@ module.exports = {
       // pass options to sass-loader
       sass: {
         // @/ is an alias to src/
-        data: `@import "@/config.scss";`
+        data: `
+          @import "@/scss/_variables.scss";
+          @import "@/scss/_functions.scss";
+          @import "@/scss/_mixins.scss";
+        `
       }
     }
   }

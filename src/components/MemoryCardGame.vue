@@ -1,15 +1,12 @@
 <template>
   <article>
     <div class="memory-game-container"> 
-      <header>
-        <!-- <h1>Hip Hop Memory Card Game</h1> -->
-        <MemoryCardGameScoreboard 
-          :timer="gameTimer"
-          :attempts="attempts"
-          :matched-pairs-count="matchedPairsCount"
-        />
-        <button @click="startNewGame">Reset</button>
-      </header> 
+      <MemoryCardGameScoreboard 
+        :timer="gameTimer"
+        :attempts="attempts"
+        :matched-pairs-count="matchedPairsCount"
+        :resetGame="startNewGame"
+      /> 
       <MemoryCardGameList>
         <MemoryCardGameListItem 
           v-for="(rapper, index) in gameCards" 
@@ -189,8 +186,7 @@ export default {
 <style lang="scss">
   .memory-game-container {
     display: grid;
-    grid-template-columns: 15% 85%;
-    grid-gap: $global-gutter;
+    grid-template-columns: column-width(3) column-width(9);
   }
 </style>
 

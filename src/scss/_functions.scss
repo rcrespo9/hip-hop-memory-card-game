@@ -1,0 +1,7 @@
+/*------------------------------------*\
+  #GRID FUNCTIONS
+\*------------------------------------*/
+
+@function column-width($col-num) {
+  @return percentage($col-num / $total-columns);
+}

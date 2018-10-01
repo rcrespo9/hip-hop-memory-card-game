@@ -19,7 +19,7 @@ export default {
     grid-row-gap: $global-gutter;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    @include col-padding;
   }
 </style>
 

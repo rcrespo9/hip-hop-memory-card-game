@@ -1,20 +1,23 @@
 <template>
-  <dl class="scoreboard">
-    <div class="scoreboard__attr">
-      <dt class="attr__key">Timer</dt>
-      <dd class="attr__val">{{timer}}</dd>
-    </div>
+  <div class="scoreboard-container">
+    <dl class="scoreboard">
+      <div class="scoreboard__attr">
+        <dt class="attr__key">Timer</dt>
+        <dd class="attr__val">{{timer}}</dd>
+      </div>
 
-    <div class="scoreboard__attr">
-      <dt class="attr__key">Tries</dt>
-      <dd class="attr__val">{{attempts}}</dd>
-    </div>
+      <div class="scoreboard__attr">
+        <dt class="attr__key">Tries</dt>
+        <dd class="attr__val">{{attempts}}</dd>
+      </div>
 
-    <div class="scoreboard__attr">
-      <dt class="attr__key">Matches</dt>
-      <dd class="attr__val">{{matchedPairsCount}}</dd>
-    </div>
-  </dl>
+      <div class="scoreboard__attr">
+        <dt class="attr__key">Matches</dt>
+        <dd class="attr__val">{{matchedPairsCount}}</dd>
+      </div>
+    </dl>
+    <button @click="resetGame">Reset</button>
+  </div>
 </template>
 
 <script>
@@ -32,34 +35,42 @@ export default {
     matchedPairsCount: {
       type: Number,
       required: true
+    },
+    resetGame: {
+      type: Function,
+      required: true
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .scoreboard {
-    margin: 0;
-    padding: ms(2) ms(1);
-    border-radius: 2px;
-    background-color: $white;
-    box-shadow: $box-shadow;
+  .scoreboard-container {
+    @include col-padding;
   }
 
-    .scoreboard__attr {
-      &:not(:last-of-type) {
-        margin-bottom: ms(0);
-      }
+    .scoreboard {
+      margin-top: 0;
+      margin-bottom: ms(0);
+      padding: ms(2) ms(1);
+      border-radius: 2px;
+      background-color: $white;
     }
 
-      .attr__key {
-        margin-bottom: ms(-7);
-        font-size: ms(1);
-        font-weight: 600;
+      .scoreboard__attr {
+        &:not(:last-of-type) {
+          margin-bottom: ms(0);
+        }
       }
 
-      .attr__val {
-        margin: 0;
-        font-size: ms(1);
-      }
+        .attr__key {
+          margin-bottom: ms(-7);
+          font-size: ms(1);
+          font-weight: 600;
+        }
+
+        .attr__val {
+          margin: 0;
+          font-size: ms(1);
+        }
 </style>
