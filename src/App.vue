@@ -26,8 +26,8 @@
   }
 
   body {
-    color: $white;
-    background-color: $black;
+    color: $black;
+    background-color: $lt-gray;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
