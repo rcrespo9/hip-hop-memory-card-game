@@ -5,7 +5,7 @@
 @import '~modularscale-sass';
 
 $modularscale: (
-  base: 1rem,
+  base: 1em,
   ratio: $fourth
 );
 
@@ -25,4 +25,11 @@ $blue: #01579b;
   #LAYOUT SETTINGS
 \*------------------------------------*/
 
-$global-gutter: 1rem;
+$global-gutter: ms(1);
+
+/*------------------------------------*\
+  #OTHER  
+\*------------------------------------*/
+
+$box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$box-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);

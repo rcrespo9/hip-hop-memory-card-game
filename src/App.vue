@@ -28,6 +28,7 @@
   body {
     color: $black;
     background-color: $lt-gray;
+    font-family: 'futura-pt', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
