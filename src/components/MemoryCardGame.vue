@@ -187,7 +187,7 @@ export default {
   .memory-game__grid {
     display: grid;
     grid-template-columns: column-width(3) 1fr;
-    column-gap: ms(2);
+    column-gap: ms(3);
   }
 </style>
 
