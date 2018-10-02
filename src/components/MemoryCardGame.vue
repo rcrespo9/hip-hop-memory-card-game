@@ -1,6 +1,6 @@
 <template>
-  <article>
-    <div class="memory-game-container"> 
+  <div class="memory-game">
+    <div class="memory-game__grid"> 
       <MemoryCardGameScoreboard 
         :timer="gameTimer"
         :attempts="attempts"
@@ -26,7 +26,7 @@
       :start-new-game="startNewGame" 
       :close-screen="closeVictoryScreen"
     />
-  </article>
+  </div>
 </template>
 
 <script>
@@ -184,7 +184,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .memory-game-container {
+  .memory-game__grid {
     display: grid;
     grid-template-columns: column-width(3) column-width(9);
   }

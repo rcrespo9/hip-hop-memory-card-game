@@ -29,10 +29,10 @@ export default {
     background-color: $green;
     color: rgba($white, .9);
     font-size: ms(-1);
-    font-weight: 700;
+    font-weight: map-get($font-weight, bold);
     letter-spacing: ms(-9);
     text-transform: uppercase;
-    transition: background-color .2s ease-in-out;
+    @include hover-transition(background-color);
 
     &:hover {
       cursor: pointer;

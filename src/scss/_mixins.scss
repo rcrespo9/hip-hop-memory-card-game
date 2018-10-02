@@ -5,3 +5,11 @@
 @mixin col-padding() {
   padding: 0 $global-gutter;
 }
+
+/*------------------------------------*\
+  #OTHER MIXINS
+\*------------------------------------*/
+
+@mixin hover-transition($property) {
+  transition: $property .2s ease-in-out;
+}

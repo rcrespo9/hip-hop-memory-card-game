@@ -1,7 +1,11 @@
 <template>
   <header class="site-header">
     <nav class="header__nav">
-      <router-link v-for="route in links" :key="route.id" :to="route.url" class="nav__link">{{route.name}}</router-link>
+      <router-link 
+        v-for="route in routes" 
+        :key="route.id" 
+        :to="route.url" 
+        class="nav__link">{{route.name}}</router-link>
     </nav>
   </header>  
 </template>
@@ -11,7 +15,7 @@ export default {
   name: 'Header',
   data () {
     return {
-      links: [
+      routes: [
         {
           id: 1,
           name: 'Home',
@@ -45,7 +49,7 @@ export default {
         font-size: ms(0);
         font-weight: 500;
         text-decoration: none;
-        transition: color .2s ease-in-out;
+        @include hover-transition(color);
 
         &:not(:last-of-type) {
           margin-right: ms(1);

@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #MODULAR SCALE SETTINGS
+  #TYPOGRAPHY VARIABLES
 \*------------------------------------*/
 
 @import '~modularscale-sass';
@@ -9,6 +9,14 @@ $modularscale: (
   ratio: $fourth
 );
 
+$font-weight: (
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  heavy: 800
+);
+
 /*------------------------------------*\
   #GLOBAL VARIABLES
 \*------------------------------------*/
@@ -16,6 +24,8 @@ $modularscale: (
 $global-gutter: ms(1);
 
 $global-radius: 4px;
+
+$global-transition: .2s ease-in-out;
 
 
 /*------------------------------------*\

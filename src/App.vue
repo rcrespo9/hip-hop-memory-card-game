@@ -2,7 +2,7 @@
   <div id="app">
     <div class="site-container">
       <Header />
-      <main>
+      <main id="page-content">
         <router-view/>
       </main>
     </div>
