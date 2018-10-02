@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: 'AppHeader',
   data () {
     return {
       routes: [
@@ -33,30 +33,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .site-header {
-    margin-bottom: ms(0);
+  .header__nav {
+    padding: ms(2) 0;
   }
 
-    .header__nav {
-      padding: ms(2) 0;
-    }
+    .nav__link {
+      display: inline-block;
+      border-bottom: 2px solid;
+      color: $md-gray;
+      font-size: ms(0);
+      font-weight: 500;
+      text-decoration: none;
+      @include hover-transition(color);
 
-      .nav__link {
-        display: inline-block;
-        border-bottom: 2px solid;
-        color: $md-gray;
-        font-size: ms(0);
-        font-weight: 500;
-        text-decoration: none;
-        @include hover-transition(color);
-
-        &:not(:last-of-type) {
-          margin-right: ms(1);
-        }
-
-        &:hover, 
-        &.router-link-exact-active {
-          color: $white;
-        }
+      &:not(:last-of-type) {
+        margin-right: ms(1);
       }
+
+      &:hover, 
+      &.router-link-exact-active {
+        color: $white;
+      }
+    }
 </style>

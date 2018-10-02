@@ -1,14 +1,17 @@
 <template>
-  <MemoryCardGame />
+  <wrapper header-text="Boom Bap Memory Game">
+    <MemoryCardGame />
+  </wrapper>
 </template>
 
 <script>
-// @ is an alias to /src
+import Wrapper from '@/components/AppWrapper.vue';
 import MemoryCardGame from '@/components/MemoryCardGame.vue'
 
 export default {
   name: 'home',
   components: {
+    Wrapper,
     MemoryCardGame
   }
 }

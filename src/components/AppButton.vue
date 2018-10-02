@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Button',
+  name: 'AppButton',
   props: {
     text: {
       type: String,
@@ -30,7 +30,7 @@ export default {
     color: rgba($white, .9);
     font-size: ms(-1);
     font-weight: map-get($font-weight, bold);
-    letter-spacing: ms(-9);
+    letter-spacing: ms(-8);
     text-transform: uppercase;
     @include hover-transition(background-color);
 
