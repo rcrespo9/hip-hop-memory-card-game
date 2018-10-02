@@ -16,7 +16,7 @@
         <dd class="attr__val">{{matchedPairsCount}}</dd>
       </div>
     </dl>
-    <button @click="resetGame">Reset</button>
+    <button class="scoreboard__btn" @click="resetGame">Reset Game</button>
   </div>
 </template>
 
@@ -51,8 +51,8 @@ export default {
 
     .scoreboard {
       margin-top: 0;
-      margin-bottom: ms(0);
-      padding: ms(2) ms(1);
+      margin-bottom: ms(1);
+      padding: ms(2);
       border-radius: $global-radius;
       background-color: $dark-gray;
     }
@@ -74,4 +74,23 @@ export default {
           margin: 0;
           font-size: ms(1);
         }
+
+      .scoreboard__btn {
+        display: block;
+        width: 100%;
+        padding: ms(1) ms(1);
+        appearance: none;
+        border: none;
+        border-radius: 30px;
+        background-color: $green;
+        color: rgba($white, .75);
+        font-size: ms(-1);
+        font-weight: 700;
+        letter-spacing: ms(-9);
+        text-transform: uppercase;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
 </style>

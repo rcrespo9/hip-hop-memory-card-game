@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "bourbon": "^5.1.0",
     "css-loader": "^1.0.0",
     "date-fns": "^1.29.0",
     "easytimer.js": "^2.2.3",
