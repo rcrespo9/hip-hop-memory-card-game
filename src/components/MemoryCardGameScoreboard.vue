@@ -55,36 +55,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .scoreboard {
-    @include col-padding;
+  .scoreboard__inner {
+    padding: ms(2);
+    border-radius: $global-radius;
+    background-color: $dark-gray;      
   }
 
-    .scoreboard__inner {
-      padding: ms(2);
-      border-radius: $global-radius;
-      background-color: $dark-gray;      
+    .scoreboard__container {
+      margin-top: 0;
+      margin-bottom: ms(1);
     }
 
-      .scoreboard__container {
-        margin-top: 0;
-        margin-bottom: ms(1);
+      .scoreboard__attr {
+        &:not(:last-of-type) {
+          margin-bottom: ms(0);
+        }
       }
 
-        .scoreboard__attr {
-          &:not(:last-of-type) {
-            margin-bottom: ms(0);
-          }
+        .attr__key {
+          margin-bottom: ms(-9);
+          color: $lt-gray;
+          font-size: ms(-1);
+          font-weight: map-get($font-weight, medium);
         }
 
-          .attr__key {
-            margin-bottom: ms(-9);
-            color: $lt-gray;
-            font-size: ms(-1);
-            font-weight: map-get($font-weight, medium);
-          }
-
-          .attr__val {
-            margin: 0;
-            font-size: ms(2);
-          }
+        .attr__val {
+          margin: 0;
+          font-size: ms(2);
+        }
 </style>

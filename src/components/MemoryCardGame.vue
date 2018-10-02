@@ -186,7 +186,8 @@ export default {
 <style lang="scss">
   .memory-game__grid {
     display: grid;
-    grid-template-columns: column-width(3) column-width(9);
+    grid-template-columns: column-width(3) 1fr;
+    column-gap: ms(2);
   }
 </style>
 

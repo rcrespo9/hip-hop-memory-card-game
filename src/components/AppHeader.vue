@@ -35,7 +35,6 @@ export default {
 <style lang="scss" scoped>
   .site-header {
     margin-bottom: ms(0);
-    @include col-padding;
   }
 
     .header__nav {

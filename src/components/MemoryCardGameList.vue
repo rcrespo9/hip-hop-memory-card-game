@@ -17,9 +17,9 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: $global-gutter;
     grid-row-gap: $global-gutter;
-    list-style-type: none;
     margin: 0;
-    @include col-padding;
+    padding: 0;
+    list-style-type: none;
   }
 </style>
 
