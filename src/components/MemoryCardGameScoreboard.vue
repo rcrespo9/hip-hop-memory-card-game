@@ -72,7 +72,7 @@ export default {
 
         .attr__val {
           margin: 0;
-          font-size: ms(1);
+          font-size: ms(2);
         }
 
       .scoreboard__btn {
@@ -83,14 +83,20 @@ export default {
         border: none;
         border-radius: 30px;
         background-color: $green;
-        color: rgba($white, .75);
+        color: rgba($white, .9);
         font-size: ms(-1);
         font-weight: 700;
         letter-spacing: ms(-9);
         text-transform: uppercase;
+        transition: background-color .2s ease-in-out;
 
         &:hover {
           cursor: pointer;
+          background-color: $lt-green;
+        }
+
+        &:focus {
+          background-color: $dark-green;
         }
       }
 </style>
