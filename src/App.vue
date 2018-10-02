@@ -1,22 +1,23 @@
 <template>
   <div id="app">
     <div class="site-container">
-      <header>
-        <nav>
-          <li>
-            <router-link to="/">Home</router-link>
-          </li>
-          <li>
-            <router-link to="/statistics">Statistics</router-link>
-          </li>
-        </nav>
-      </header>
+      <Header />
       <main>
         <router-view/>
       </main>
     </div>
   </div>
 </template>
+
+<script>
+import Header from './components/AppHeader.vue';
+
+export default {
+  components: {
+    Header
+  }
+}
+</script>
 
 <style lang="scss">
   *,
@@ -42,9 +43,5 @@
     max-width: ms(15);
     margin: 0 auto;
     padding: 0 $global-gutter;
-  }
-
-  main {
-    padding-top: ms(2);
   }
 </style>

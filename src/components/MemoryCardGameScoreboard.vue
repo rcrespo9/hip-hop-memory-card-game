@@ -16,13 +16,21 @@
         <dd class="attr__val">{{matchedPairsCount}}</dd>
       </div>
     </dl>
-    <button class="scoreboard__btn" @click="resetGame">Reset Game</button>
+    <Button 
+      text="Reset Game" 
+      :click-evt="resetGame" 
+    />
   </div>
 </template>
 
 <script>
+import Button from './AppButton.vue';
+
 export default {
   name: 'MemoryCardGameScoreboard',
+  components: {
+    Button
+  },
   props: {
     timer: {
       type: String,
@@ -67,36 +75,11 @@ export default {
           margin-bottom: ms(-9);
           color: $lt-gray;
           font-size: ms(-1);
-          font-weight: 700;
+          font-weight: 500;
         }
 
         .attr__val {
           margin: 0;
           font-size: ms(2);
         }
-
-      .scoreboard__btn {
-        display: block;
-        width: 100%;
-        padding: ms(1) ms(1);
-        appearance: none;
-        border: none;
-        border-radius: 30px;
-        background-color: $green;
-        color: rgba($white, .9);
-        font-size: ms(-1);
-        font-weight: 700;
-        letter-spacing: ms(-9);
-        text-transform: uppercase;
-        transition: background-color .2s ease-in-out;
-
-        &:hover {
-          cursor: pointer;
-          background-color: $lt-green;
-        }
-
-        &:focus {
-          background-color: $dark-green;
-        }
-      }
 </style>
