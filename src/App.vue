@@ -25,9 +25,13 @@
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 20px;
+  }
+
   body {
-    color: $black;
-    background-color: $lt-gray;
+    color: $white;
+    background-color: $black;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.333;
     -webkit-font-smoothing: antialiased;

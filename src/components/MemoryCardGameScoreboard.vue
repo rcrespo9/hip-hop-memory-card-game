@@ -53,8 +53,8 @@ export default {
       margin-top: 0;
       margin-bottom: ms(0);
       padding: ms(2) ms(1);
-      border-radius: 2px;
-      background-color: $white;
+      border-radius: $global-radius;
+      background-color: $dark-gray;
     }
 
       .scoreboard__attr {
@@ -64,9 +64,10 @@ export default {
       }
 
         .attr__key {
-          margin-bottom: ms(-7);
-          font-size: ms(1);
-          font-weight: 600;
+          margin-bottom: ms(-9);
+          color: $lt-gray;
+          font-size: ms(-1);
+          font-weight: 700;
         }
 
         .attr__val {

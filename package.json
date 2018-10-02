@@ -11,6 +11,7 @@
     "css-loader": "^1.0.0",
     "date-fns": "^1.29.0",
     "easytimer.js": "^2.2.3",
+    "jshint": "^2.9.6",
     "lodash": "^4.17.11",
     "modularscale-sass": "^3.0.5",
     "node-sass": "^4.9.3",

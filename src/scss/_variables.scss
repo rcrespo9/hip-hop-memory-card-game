@@ -15,9 +15,10 @@ $modularscale: (
 
 $white: #fff;
 
-$lt-gray: #eee;
+$lt-gray: #8e8e8e;
+$dark-gray: #212121;
 
-$black: #212121;
+$black: #1b1b1b;
 
 $blue: #01579b;
 
@@ -36,6 +37,8 @@ $total-columns: 12;
 /*------------------------------------*\
   #OTHER VARIABLES
 \*------------------------------------*/
+
+$global-radius: 2px;
 
 $box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $box-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
