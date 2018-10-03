@@ -40,7 +40,7 @@ export default {
   }
   
   .site-container {
-    max-width: ms(15);
+    max-width: ms(14);
     margin: 0 auto;
     padding: 0 $global-gutter;
   }
