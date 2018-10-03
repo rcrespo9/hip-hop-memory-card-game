@@ -5,7 +5,6 @@
         <thead>
           <tr>
             <th scope="col">Final Time</th>
-            <th scope="col">Tries</th>
             <th scope="col">Success Rate</th>
             <th scope="col">Date</th>
           </tr>
@@ -13,7 +12,6 @@
         <tbody>
           <tr v-for="(statLine, index) in orderedStats" :key="index">
             <td data-header="Final Time">{{statLine.finalTime}}</td>
-            <td data-header="Tries">{{statLine.tries}}</td>
             <td data-header="Success Rate">{{statLine.successRate}}</td>
             <td data-header="Date">{{statLine.date | formatDate}}</td>
           </tr>

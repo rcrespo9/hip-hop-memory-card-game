@@ -133,7 +133,6 @@ export default {
       const game = {
         finalTime: this.finalTime,
         successRate: this.successRate,
-        tries: this.attempts,
         date: new Date()
       };
 
