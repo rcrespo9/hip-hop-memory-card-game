@@ -5,16 +5,19 @@
       <main id="page-content">
         <router-view/>
       </main>
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
 import Header from './components/AppHeader.vue';
+import Footer from './components/AppFooter.vue';
 
 export default {
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>

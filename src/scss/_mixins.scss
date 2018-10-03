@@ -1,3 +1,20 @@
 @mixin hover-transition($property) {
   transition: $property .2s ease-in-out;
 }
+
+@mixin anchor-styles($has-border: true) {
+  color: $md-gray;
+  font-size: ms(0);
+  font-weight: 500;
+  text-decoration: none;
+  @include hover-transition(color);
+
+  @if $has-border {
+    padding-bottom: ms(-5);
+    border-bottom: 2px solid;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
