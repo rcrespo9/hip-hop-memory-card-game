@@ -62,7 +62,7 @@ export default {
     &:before {
       content: "";
       z-index: 9;
-      background-color: rgba(0,0,0,.5);
+      background-color: rgba($real-black, .4);
     }
   }
 
@@ -81,7 +81,8 @@ export default {
 
       .victory-screen__msg {
         margin-top: 0;
-        margin-bottom: ms(-1);
+        margin-bottom: ms(-2);
         font-size: ms(3);
+        text-shadow: 0 1px 0 rgba($real-black, .75);
       }
 </style>
