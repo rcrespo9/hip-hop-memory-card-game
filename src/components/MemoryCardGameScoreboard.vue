@@ -71,7 +71,7 @@ export default {
       }
 
         .attr__key {
-          margin-bottom: ms(-9);
+          margin-bottom: ms(-11);
           color: $lt-gray;
           font-size: ms(-1);
           font-weight: map-get($font-weight, medium);

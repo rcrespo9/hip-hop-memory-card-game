@@ -40,6 +40,10 @@ export default {
       line-height: 1.333;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
+      &.no-scroll {
+        overflow: hidden;
+      }
     }
     
       .site-container {

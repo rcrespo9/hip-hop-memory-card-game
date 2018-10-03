@@ -20,7 +20,7 @@
       </MemoryCardGameList>
     </div>
     <MemoryCardGameVictoryScreen 
-      
+      v-if="showVictoryScreen"
       :success-rate="successRate" 
       :final-time="finalTime" 
       :start-new-game="startNewGame" 
@@ -177,6 +177,16 @@ export default {
     matchedPairsCount (count) {
       if (count === this.pairsAmount) {
         this.wonGame();
+      }
+    },
+    showVictoryScreen (val) {
+      const $body = document.body;
+      const noScrollClass = 'no-scroll';
+
+      if(val) {
+        $body.classList.add(noScrollClass);
+      } else {
+        $body.classList.remove(noScrollClass);
       }
     }
   }
