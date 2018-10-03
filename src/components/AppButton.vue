@@ -37,6 +37,7 @@ export default {
 
     &.block {
       display: block;
+      padding: ms(0) ms(1);
     }
 
     &.full {

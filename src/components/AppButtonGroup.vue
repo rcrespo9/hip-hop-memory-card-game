@@ -13,7 +13,7 @@ export default {
 <style lang="scss" scoped>
   .button-group {
     button:not(:last-of-type) {
-      margin-right: ms(1);
+      margin-right: ms(0);
     }
   }
 </style>

@@ -30,7 +30,15 @@ export default {
   }
 
   html {
-    font-size: 20px;
+    font-size: 16px;
+
+    @include media-query($md-screen) {
+      font-size: 18px;
+    }
+
+    @include media-query($lg-screen) {
+      font-size: 20px;
+    }
   }
 
     body {
