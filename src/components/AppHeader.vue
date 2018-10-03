@@ -34,7 +34,7 @@ export default {
 
 <style lang="scss" scoped>
   .header__nav {
-    padding: ms(2) 0;
+    padding: ms(2) 0 ms(1);
   }
 
     .nav__link {
