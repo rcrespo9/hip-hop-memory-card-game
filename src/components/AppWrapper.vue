@@ -20,10 +20,9 @@ export default {
 <style lang="scss" scoped>
   h1 {
     margin-top: 0;
-    margin-bottom: ms(0);
+    margin-bottom: ms(-1);
     font-size: ms(3);
     font-weight: map-get($font-weight, bold);
-    text-align: center;
   }
 </style>
 
