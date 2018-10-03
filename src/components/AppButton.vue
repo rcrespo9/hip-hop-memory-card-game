@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="button" @click="clickEvt">{{text}}</button>
+  <button type="button" :class="{block: isBlock, full: isFullWidth}" @click="clickEvt">{{text}}</button>
 </template>
 
 <script>
@@ -13,16 +13,17 @@ export default {
     clickEvt: { 
       type: Function,
       required: true
-    }
+    },
+    isBlock: Boolean,
+    isFullWidth: Boolean
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .button {
-    display: block;
-    width: 100%;
-    padding: ms(1) ms(1);
+  button {
+    display: inline-block;
+    padding: ms(0) ms(2);
     appearance: none;
     border: none;
     border-radius: 30px;
@@ -30,9 +31,17 @@ export default {
     color: rgba($white, .9);
     font-size: ms(-1);
     font-weight: map-get($font-weight, bold);
-    letter-spacing: ms(-8);
+    letter-spacing: ms(-9);
     text-transform: uppercase;
     @include hover-transition(background-color);
+
+    &.block {
+      display: block;
+    }
+
+    &.full {
+      width: 100%;
+    }
 
     &:hover {
       cursor: pointer;

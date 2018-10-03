@@ -20,6 +20,8 @@
       <Button 
         text="Reset Game" 
         :click-evt="resetGame" 
+        :is-block="true"
+        :is-full-width="true"
       />
     </div>
   </card>

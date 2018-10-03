@@ -20,7 +20,7 @@
       </MemoryCardGameList>
     </div>
     <MemoryCardGameVictoryScreen 
-      v-show="showVictoryScreen" 
+      
       :success-rate="successRate" 
       :final-time="finalTime" 
       :start-new-game="startNewGame" 
