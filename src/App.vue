@@ -2,7 +2,7 @@
   <div id="app">
     <div class="site-container">
       <Header />
-      <main id="page-content">
+      <main class="site-content" id="page-content">
         <router-view/>
       </main>
       <Footer />
@@ -33,18 +33,26 @@ export default {
     font-size: 20px;
   }
 
-  body {
-    color: $white;
-    background-color: $black;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.333;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .site-container {
-    max-width: ms(14);
-    margin: 0 auto;
-    padding: 0 $global-gutter;
-  }
+    body {
+      color: $white;
+      background-color: $black;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.333;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+      .site-container {
+        display: flex;
+        flex-direction: column;
+        max-width: ms(14);
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 0 $global-gutter;
+      }
+
+        .site-content {
+          flex: 1;
+          margin-bottom: ms(1);
+        }
 </style>

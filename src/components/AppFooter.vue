@@ -12,11 +12,12 @@ export default {
 
 <style lang="scss" scoped>
   footer {
-    padding: ms(2) 0 ms(1);
-    color: $lt-gray;
+    padding: ms(1) 0;
   }
 
   p {
+    margin: 0;
+    color: $lt-gray;
     font-size: ms(-1);
   }
 
