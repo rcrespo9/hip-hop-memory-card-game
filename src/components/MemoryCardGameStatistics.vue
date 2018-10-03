@@ -64,10 +64,36 @@ export default {
 <style lang="scss" scoped>
   table {
     width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
   }
 
     th {
+      background-color: $md-dark-gray;
+      font-weight: map-get($font-weight, semi-bold);
       text-align: left;
+
+      &:first-of-type {
+        border-top-left-radius: $global-radius;
+        border-bottom-left-radius: $global-radius;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: $global-radius;
+        border-bottom-right-radius: $global-radius;
+      }
+    }
+
+    th, 
+    td {
+      padding: ms(0);
+      font-size: ms(0);
+    }
+
+    tbody tr {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid rgba($white, .2);
+      }
     }
 
   .no-stats-msg {

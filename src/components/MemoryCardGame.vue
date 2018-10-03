@@ -74,7 +74,7 @@ export default {
       return {
         Rappers,
         gameCards: [],
-        pairsAmount: 6,
+        pairsAmount: 8,
         gameTimer: '00:00',
         timer: new Timer(),
         finalTime: '',
