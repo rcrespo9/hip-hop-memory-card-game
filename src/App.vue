@@ -43,6 +43,10 @@ export default {
     @include media-query($lg-screen) {
       font-size: 20px;
     }
+
+    @include media-query($xlg-screen) {
+      font-size: ms(1, 1vw);
+    }
   }
 
     body {
