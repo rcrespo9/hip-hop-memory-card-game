@@ -58,6 +58,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 $global-gutter;
 
     &:before {
       content: "";
@@ -82,7 +83,11 @@ export default {
       .victory-screen__msg {
         margin-top: 0;
         margin-bottom: ms(-2);
-        font-size: ms(3);
+        font-size: ms(2);
         text-shadow: 0 1px 0 rgba($real-black, .75);
+
+        @include media-query($xsm-screen) {
+          font-size: ms(3);
+        }
       }
 </style>
