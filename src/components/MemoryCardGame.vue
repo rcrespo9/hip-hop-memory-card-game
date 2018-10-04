@@ -195,14 +195,16 @@ export default {
 
 <style lang="scss">
   .memory-game__grid {
-    display: grid;
-    grid-row-gap: ms(1);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 
     @include media-query($sm-screen) {
       display: grid;
       grid-template-columns: column-width(3) 1fr;
       grid-column-gap: ms(2);
-      grid-row-gap: normal;
+      flex-direction: initial;
+      flex: none;
     }
   }
 </style>
