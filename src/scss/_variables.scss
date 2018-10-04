@@ -21,7 +21,7 @@ $font-weight: (
   #GLOBAL VARIABLES
 \*------------------------------------*/
 
-$global-gutter: ms(1);
+$global-gutter: ms(0);
 
 $global-radius: 4px;
 
@@ -56,8 +56,9 @@ $total-columns: 12;
   #LAYOUT VARIABLES
 \*------------------------------------*/
 
-$lg-screen: 60em; // 960px
 $md-screen: 53.750em; // 860px
+$lg-screen: 60em; // 960px
+$xlg-screen: 105em; // 1680px
 
 /*------------------------------------*\
   #OTHER VARIABLES

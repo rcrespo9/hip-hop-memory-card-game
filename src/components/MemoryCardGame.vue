@@ -196,8 +196,14 @@ export default {
 <style lang="scss">
   .memory-game__grid {
     display: grid;
-    grid-template-columns: column-width(3) 1fr;
-    column-gap: ms(2);
+    grid-row-gap: ms(1);
+
+    @include media-query($md-screen) {
+      display: grid;
+      grid-template-columns: column-width(3) 1fr;
+      grid-column-gap: ms(2);
+      grid-row-gap: normal;
+    }
   }
 </style>
 
