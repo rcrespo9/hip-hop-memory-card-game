@@ -59,14 +59,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .scoreboard {
+      display: grid;
+      grid-template-columns: minmax( auto, ms(9) ) minmax( auto, ms(8) );
+      grid-column-gap: ms(2);
+      justify-content: space-between;
+
+      @include media-query($sm-screen) {
+        display: block;
+      }
+    }
+
     .scoreboard__container {
+      display: flex;
+      justify-content: space-between;
       margin-top: 0;
-      margin-bottom: ms(1);
+      margin-bottom: 0;
+
+      @include media-query($sm-screen) {
+        display: block;
+        justify-content: normal;
+        margin-bottom: ms(1);
+      }
     }
 
       .scoreboard__attr {
         &:not(:last-of-type) {
-          margin-bottom: ms(0);
+          margin-right: ms(1);
+        }
+
+        @include media-query($sm-screen) {
+          &:not(:last-of-type) {
+            margin-right: 0;
+            margin-bottom: ms(0);
+          }
         }
       }
 
