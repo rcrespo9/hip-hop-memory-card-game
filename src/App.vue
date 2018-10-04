@@ -30,7 +30,11 @@ export default {
   }
 
   html {
-    font-size: 16px;
+    font-size: 14px;
+
+    @include media-query($xsm-screen) {
+      font-size: 16px;
+    }
 
     @include media-query($md-screen) {
       font-size: 18px;

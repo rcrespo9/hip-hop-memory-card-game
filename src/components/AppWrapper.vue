@@ -21,8 +21,12 @@ export default {
   h1 {
     margin-top: 0;
     margin-bottom: ms(-1);
-    font-size: ms(3);
+    font-size: ms(2);
     font-weight: map-get($font-weight, bold);
+  }
+
+  @include media-query($xsm-screen) {
+    font-size: ms(3);
   }
 </style>
 

@@ -11,9 +11,15 @@
         </thead>
         <tbody>
           <tr v-for="(statLine, index) in orderedStats" :key="index">
-            <td data-header="Final Time">{{statLine.finalTime}}</td>
-            <td data-header="Success Rate">{{statLine.successRate}}</td>
-            <td data-header="Date">{{statLine.date | formatDate}}</td>
+            <td data-header="Final Time">
+              <span>{{statLine.finalTime}}</span>
+            </td>
+            <td data-header="Success Rate">
+              <span>{{statLine.successRate}}</span>
+            </td>
+            <td data-header="Date">
+              <span>{{statLine.date | formatDate}}</span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -66,21 +72,27 @@ export default {
     border-spacing: 0;
   }
 
-    th {
-      background-color: $md-dark-gray;
-      font-weight: map-get($font-weight, semi-bold);
-      text-align: left;
-
-      &:first-of-type {
-        border-top-left-radius: $global-radius;
-        border-bottom-left-radius: $global-radius;
-      }
-
-      &:last-of-type {
-        border-top-right-radius: $global-radius;
-        border-bottom-right-radius: $global-radius;
+    thead {
+      @include max-width-mq($xsm-screen-only) {
+        @include sr-only;
       }
     }
+
+      th {
+        background-color: $md-dark-gray;
+        font-weight: map-get($font-weight, semi-bold);
+        text-align: left;
+
+        &:first-of-type {
+          border-top-left-radius: $global-radius;
+          border-bottom-left-radius: $global-radius;
+        }
+
+        &:last-of-type {
+          border-top-right-radius: $global-radius;
+          border-bottom-right-radius: $global-radius;
+        }
+      }
 
     th, 
     td {
@@ -93,6 +105,18 @@ export default {
         border-bottom: 1px solid rgba($white, .2);
       }
     }
+
+      td {
+        @include max-width-mq($xsm-screen-only) {
+          display: flex;
+          justify-content: space-between;
+
+          &:before {
+            content: attr(data-header)":";
+            color: $lt-gray;
+          }
+        }
+      }
 
   .no-stats-msg {
     margin: 0;
