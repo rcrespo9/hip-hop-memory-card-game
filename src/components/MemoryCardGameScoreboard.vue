@@ -60,10 +60,12 @@ export default {
 
 <style lang="scss" scoped>
     .scoreboard {
-      display: grid;
-      grid-template-columns: minmax( auto, ms(9) ) minmax( auto, ms(8) );
-      grid-column-gap: ms(2);
-      justify-content: space-between;
+      @include media-query($xsm-screen) {
+        display: grid;
+        grid-template-columns: minmax( auto, ms(9) ) minmax( auto, ms(8) );
+        grid-column-gap: ms(3);
+        justify-content: space-between;
+      }
 
       @include media-query($sm-screen) {
         display: block;
@@ -74,7 +76,11 @@ export default {
       display: flex;
       justify-content: space-between;
       margin-top: 0;
-      margin-bottom: 0;
+      margin-bottom: ms(0);
+
+      @include media-query($xsm-screen) {
+        margin-bottom: 0;
+      }
 
       @include media-query($sm-screen) {
         display: block;
@@ -85,7 +91,7 @@ export default {
 
       .scoreboard__attr {
         &:not(:last-of-type) {
-          margin-right: ms(1);
+          margin-right: ms(3);
         }
 
         @include media-query($sm-screen) {

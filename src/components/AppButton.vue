@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
   button {
     display: inline-block;
-    padding: ms(0) ms(3);
+    padding: ms(1) ms(3);
     appearance: none;
     border: none;
     border-radius: 30px;
@@ -37,7 +37,7 @@ export default {
 
     &.block {
       display: block;
-      padding: ms(0) ms(1);
+      padding: ms(1);
     }
 
     &.full {
