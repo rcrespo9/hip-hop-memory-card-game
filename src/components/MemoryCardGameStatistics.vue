@@ -4,9 +4,11 @@
       <table>
         <thead>
           <tr>
-            <th scope="col">Final Time</th>
-            <th scope="col">Success Rate</th>
-            <th scope="col">Date</th>
+            <th v-for="(statHeader, index) in statsHeaders" 
+            :key="index" 
+            :data-header-key="statHeader.keyName" 
+            @click.self="sortStats"
+            scope="col">{{statHeader.name}}</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +47,23 @@ export default {
   },
   data () {
     return {
-      stats: ''
+      stats: '',
+      orderKey: 'date',
+      order: 'desc',
+      statsHeaders: [
+        {
+          name: 'Final Time',
+          keyName: 'finalTime'
+        },
+        {
+          name: 'Success Rate',
+          keyName: 'successRate'
+        },
+        {
+          name: 'Date',
+          keyName: 'date'
+        },
+      ]
     }
   },
   filters: {
@@ -59,7 +77,19 @@ export default {
   },
   computed: {
     orderedStats () {
-      return _.orderBy(this.stats, 'date', 'desc');
+      return _.orderBy(this.stats, this.orderKey, this.order);
+    }
+  },
+  methods: {
+    sortStats (e) {
+      const headerKey = e.target.dataset.headerKey;
+      this.orderKey = headerKey;
+
+      if (this.order === 'asc') {
+        this.order = 'desc';
+      } else {
+        this.order = 'asc';
+      }
     }
   }
 }
@@ -82,6 +112,7 @@ export default {
         background-color: $md-dark-gray;
         font-weight: map-get($font-weight, semi-bold);
         text-align: left;
+        cursor: pointer;
 
         &:first-of-type {
           border-top-left-radius: $global-radius;
