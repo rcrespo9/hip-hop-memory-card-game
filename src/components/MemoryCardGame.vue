@@ -122,9 +122,11 @@ export default {
     },
     wonGame () {
       this.allPairsFound = true;
-      this.showVictoryScreen = true;
       this.finalTime = this.gameTimer;
       this.timer.stop();
+      setTimeout(() => {
+        this.showVictoryScreen = true;
+      }, 300);
       this.saveStatsToLocalStorage();
     },
     saveStatsToLocalStorage () {
