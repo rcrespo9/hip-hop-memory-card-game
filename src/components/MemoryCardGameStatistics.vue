@@ -7,8 +7,8 @@
             <th v-for="(statHeader, index) in statsHeaders" 
             :key="index" 
             :data-header-key="statHeader.keyName" 
-            @click.self="sortStats"
-            scope="col">{{statHeader.name}}</th>
+            @click="sortStats"
+            scope="col"><span>{{statHeader.name}}</span></th>
           </tr>
         </thead>
         <tbody>
@@ -82,8 +82,11 @@ export default {
   },
   methods: {
     sortStats (e) {
-      const headerKey = e.target.dataset.headerKey;
-      this.orderKey = headerKey;
+      if (e.target.nodeName === 'TH') {
+        this.orderKey = e.target.dataset.headerKey;
+      } else if (e.target.nodeName === 'SPAN') {
+        this.orderKey = e.target.parentNode.dataset.headerKey;
+      }
 
       if (this.order === 'asc') {
         this.order = 'desc';
