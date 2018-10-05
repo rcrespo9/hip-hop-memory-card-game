@@ -9,6 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      alias: '/boom-bap-memory-game',
       name: 'home',
       component: Home
     },
