@@ -1,6 +1,6 @@
 <template>
   <div class="victory-screen">
-    <video class="victory-screen__vid" autoplay loop muted src="@/assets/flava-flav.mp4">
+    <video class="victory-screen__vid" autoplay loop muted poster="@/assets/flava-flav-vid-poster.jpg" src="@/assets/flava-flav.mp4">
       Sorry, your browser doesn't support embedded videos.
     </video>
     <div class="victory-screen__inner">
